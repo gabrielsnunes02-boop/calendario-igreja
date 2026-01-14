@@ -1,0 +1,23 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* ... seus outros estilos ... */
+
+@media print {
+  .no-print { display: none !important; }
+  
+  /* FORÇA AS CORES NA IMPRESSÃO */
+  * {
+    -webkit-print-color-adjust: exact !important;
+    print-color-adjust: exact !important;
+    color-adjust: exact !important;
+  }
+
+  body { background: white !important; }
+  
+  .grid { 
+    display: grid !important; 
+    grid-template-columns: repeat(7, 1fr) !important; /* Força 7 colunas no mês */
+  }
+}
