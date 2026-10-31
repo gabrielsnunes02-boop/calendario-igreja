@@ -36,7 +36,8 @@ jobs:
         working-directory: android
         run: |
           chmod +x gradlew
-          ./gradlew assembleRelease --no-daemon
+          # tenta de novo se algum download falhar no meio do caminho
+          ./gradlew assembleRelease --no-daemon || (sleep 20 && ./gradlew assembleRelease --no-daemon --refresh-dependencies)
           cp app/build/outputs/apk/release/app-release.apk ../AtelieDeBolso.apk
 
       - name: Guardar APK (artefato)

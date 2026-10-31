@@ -4,6 +4,8 @@ buildscript {
     
     repositories {
         google()
+        // Espelho do Maven Central (o principal às vezes recusa downloads do GitHub Actions)
+        maven { url 'https://maven-central.storage-download.googleapis.com/maven2/' }
         mavenCentral()
     }
     dependencies {
@@ -20,6 +22,8 @@ apply from: "variables.gradle"
 allprojects {
     repositories {
         google()
+        // Espelho do Maven Central (o principal às vezes recusa downloads do GitHub Actions)
+        maven { url 'https://maven-central.storage-download.googleapis.com/maven2/' }
         mavenCentral()
     }
 }
